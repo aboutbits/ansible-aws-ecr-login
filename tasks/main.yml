@@ -1,4 +1,4 @@
 ---
 - name: Log into AWS ECR docker registry
-  shell: "aws ecr get-login-password | docker login --username AWS --password-stdin {{ aws_ecr_login_repository }}"
+  ansible.builtin.shell: "aws ecr get-login-password | docker login --username AWS --password-stdin {{ aws_ecr_login_repository }}"
   when: aws_ecr_login_repository is not none and aws_ecr_login_repository != ''
