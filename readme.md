@@ -11,8 +11,9 @@ Login to AWS ECR role.
 
 ```yaml
 - hosts: all
-  roles:
-    - role: ansible-aws-ecr-login
+  tasks:
+    - ansible.builtin.include_role:
+        ansible-aws-ecr-login
       vars:
         aws_ecr_login_repository: xxx.dkr.ecr.eu-west-1.amazonaws.com
 ```
